@@ -5,30 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hassan Saeed - Portfolio</title>
   <style>
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background: #f4f6f9; color: #333; }
-    header { background: linear-gradient(90deg, #0d6efd, #6610f2); color: white; padding: 40px; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { margin: 5px 0 0; font-size: 1.2rem; }
-    section { padding: 40px; max-width: 1000px; margin: auto; }
-    h2 { color: #0d6efd; margin-bottom: 15px; }
-    .card { background: white; padding: 20px; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5dc; /* beige background */
+      color: #2f3e2f; /* dark olive green text */
+      transition: all 0.3s ease;
+    }
+    header {
+      background: linear-gradient(90deg, #556b2f, #6b8e23);
+      color: white;
+      padding: 50px;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    header h1 { margin: 0; font-size: 3rem; }
+    header p { margin: 10px 0 0; font-size: 1.2rem; }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    h2 {
+      color: #556b2f;
+      margin-bottom: 15px;
+      border-left: 6px solid #6b8e23;
+      padding-left: 10px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
     .card h3 { margin-top: 0; }
-    a { color: #0d6efd; text-decoration: none; font-weight: bold; }
-    a:hover { text-decoration: underline; }
-    footer { background: #0d6efd; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    a {
+      color: #556b2f;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    a:hover { color: #6b8e23; text-decoration: underline; }
+    footer {
+      background: #556b2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    img.certificate {
+      max-width: 100%;
+      border: 3px solid #6b8e23;
+      border-radius: 10px;
+      margin-top: 15px;
+      transition: transform 0.3s;
+    }
+    img.certificate:hover {
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Hassan Saeed</h1>
-    <p>Certified Web Developer | AI & Database Enthusiast | Software Engineer in Progress</p>
+    <p>Oracle & Web Developer | AI & Database Enthusiast | Software Engineer in Progress</p>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
-      <p>I am a 5th semester BSCS student at <b>UET Lahore</b>, passionate about technology, Artificial Intelligence, and Database Systems. I am currently working as a <b>Web Developer at PMS Pvt Ltd</b>, where I have gained <b>8 months of professional experience</b> and continue to grow my skills while pursuing academics.</p>
+      <p>I am a 5th semester BSCS student at <b>UET Lahore</b>, passionate about Artificial Intelligence, Databases, and Web Development. 
+      Currently working as an <b>Oracle & Web Developer at PMS Pvt Ltd</b> with <b>8 months of professional experience</b>, while continuing my academic journey.</p>
     </div>
   </section>
 
@@ -36,11 +107,11 @@
     <h2>Experience</h2>
     <div class="card">
       <h3>PMS Pvt Ltd (Nov 2024 – Present)</h3>
-      <p>Role: Web & Software Developer</p>
+      <p>Role: Oracle & Web Developer</p>
       <ul>
         <li>Developed and maintained websites & web applications.</li>
-        <li>Worked with Oracle Forms & Reports, backend systems, and database-driven applications.</li>
-        <li>Collaborated with teams to deliver client-focused solutions.</li>
+        <li>Worked with Oracle Forms & Reports and backend database systems.</li>
+        <li>Delivered database-driven solutions with modern technologies.</li>
       </ul>
     </div>
   </section>
@@ -49,12 +120,12 @@
     <h2>Certifications</h2>
     <div class="card">
       <h3>NAVTTC (Govt. of Pakistan) – Web Development Certification</h3>
-      <p>Completed government-backed training under NAVTTC in Web Development.</p>
+      <p>Certified Web Developer under the Government of Pakistan program powered by NAVTTC.</p>
     </div>
     <div class="card">
       <h3>Coursera – Preparing Data for Analysis with Microsoft Excel</h3>
       <p>Authorized by Microsoft via Coursera.</p>
-      <p><a href="https://coursera.org/verify/8E2ENN2EAP9C" target="_blank">View Certificate</a></p>
+      <img src="coursera-cert.png" alt="Coursera Certificate" class="certificate">
     </div>
   </section>
 
@@ -90,7 +161,7 @@
   <section id="contact">
     <h2>Contact</h2>
     <div class="card">
-      <p>Email: hschatthi@gmail.com</p>
+      <p>Email: hschatthi@.com</p>
       <p>GitHub: <a href="https://github.com/Hassansaeedd" target="_blank">github.com/Hassansaeedd</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/hassan-saeed-4b9010368/" target="_blank">linkedin.com/in/Hassan Saeed</a></p>
     </div>

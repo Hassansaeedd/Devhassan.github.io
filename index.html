@@ -63,12 +63,15 @@
       animation: fadeInUp 1s ease-in-out;
     }
     img.certificate {
-      max-width: 100%;
-      border: 3px solid #6b8e23;
-      border-radius: 10px;
-      margin-top: 15px;
-      transition: transform 0.3s;
-    }
+  max-width: 400px;   /* sets a max width */
+  width: 100%;        /* keeps it responsive */
+  display: block;     /* centers it */
+  margin: 15px auto;  /* centers it horizontally */
+  border: 3px solid #6b8e23;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
     img.certificate:hover {
       transform: scale(1.05);
     }
@@ -125,7 +128,7 @@
     <div class="card">
       <h3>Coursera – Preparing Data for Analysis with Microsoft Excel</h3>
       <p>Authorized by Microsoft via Coursera.</p>
-      <img src="coursera-cert.png" alt="Coursera Certificate" class="certificate">
+      <img src="coursera-cert.png" alt="Coursera Certificate" class="certificate" width="400">
     </div>
   </section>
 

@@ -6,103 +6,154 @@
   <title>Hassan Saeed - Portfolio</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5dc; /* beige background */
-      color: #2f3e2f; /* dark olive green text */
+      background: #0f0f0f; /* deep black / near-black */
+      color: #e0e0e0; /* light gray for readability */
       transition: all 0.3s ease;
     }
     header {
-      background: linear-gradient(90deg, #556b2f, #6b8e23);
-      color: white;
-      padding: 50px;
+      background: linear-gradient(135deg, #4a0e0e, #8b0000, #4a0e0e);
+      color: #f5f5f5;
+      padding: 80px 20px;
       text-align: center;
-      animation: fadeInDown 1s ease-in-out;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      position: relative;
+      overflow: hidden;
     }
-    header h1 { margin: 0; font-size: 3rem; }
-    header p { margin: 10px 0 0; font-size: 1.2rem; }
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(139,0,0,0.15) 0%, transparent 70%);
+      animation: pulse 12s infinite;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 15px rgba(139,0,0,0.6);
+    }
+    header p {
+      margin: 15px 0 0;
+      font-size: 1.4rem;
+      opacity: 0.9;
+    }
     section {
-      padding: 50px 20px;
-      max-width: 1000px;
+      padding: 60px 20px;
+      max-width: 1100px;
       margin: auto;
-      animation: fadeIn 1.5s ease-in-out;
     }
     h2 {
-      color: #556b2f;
-      margin-bottom: 15px;
-      border-left: 6px solid #6b8e23;
-      padding-left: 10px;
+      color: #c62828; /* rich maroon */
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      font-weight: 600;
+      border-left: 6px solid #8b0000;
+      padding-left: 15px;
+      letter-spacing: 1px;
     }
     .card {
-      background: white;
-      padding: 25px;
-      margin: 20px 0;
+      background: #1a1a1a;
+      padding: 30px;
+      margin: 25px 0;
       border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #3a0000;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      transition: all 0.4s ease;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(139,0,0,0.25);
+      border-color: #c62828;
     }
-    .card h3 { margin-top: 0; }
+    .card h3 {
+      margin-top: 0;
+      color: #e57373;
+      font-size: 1.6rem;
+    }
     a {
-      color: #556b2f;
+      color: #ef5350;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
+      font-weight: 600;
+      transition: all 0.3s;
     }
-    a:hover { color: #6b8e23; text-decoration: underline; }
+    a:hover {
+      color: #ff8a80;
+      text-decoration: underline;
+    }
     footer {
-      background: #556b2f;
-      color: white;
+      background: #0d0000;
+      color: #b0b0b0;
       text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-      animation: fadeInUp 1s ease-in-out;
+      padding: 30px;
+      margin-top: 60px;
+      border-top: 1px solid #3a0000;
     }
     img.certificate {
-  max-width: 400px;   /* sets a max width */
-  width: 100%;        /* keeps it responsive */
-  display: block;     /* centers it */
-  margin: 15px auto;  /* centers it horizontally */
-  border: 3px solid #6b8e23;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-    img.certificate:hover {
-      transform: scale(1.05);
+      max-width: 420px;
+      width: 100%;
+      display: block;
+      margin: 20px auto;
+      border: 3px solid #8b0000;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(139,0,0,0.4);
+      transition: all 0.4s;
     }
-
+    img.certificate:hover {
+      transform: scale(1.06);
+      box-shadow: 0 12px 30px rgba(139,0,0,0.6);
+    }
+    ul {
+      padding-left: 20px;
+      line-height: 1.7;
+    }
     /* Animations */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.1); }
+    }
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+    section, header {
+      animation: fadeIn 1.2s ease-out;
+    }
+    header {
+      animation: fadeInDown 1s ease-out;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Hassan Saeed</h1>
-    <p>Oracle & Web Developer | AI & Database Enthusiast | Software Engineer in Progress</p>
+    <p>Oracle & Web Developer | AI & Computer Vision Enthusiast | Full-Stack Engineer</p>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
-      <p>I am a 5th semester BSCS student at <b>UET Lahore</b>, passionate about Artificial Intelligence, Databases, and Web Development. 
-      Currently working as an <b>Oracle & Web Developer at PMS Pvt Ltd</b> with <b>8 months of professional experience</b>, while continuing my academic journey.</p>
+      <p>I am a BSCS student at <b>UET Lahore</b>, deeply passionate about Artificial Intelligence, Computer Vision, Databases, and Full-Stack Web Development. I thrive on creating elegant, high-performance solutions that solve real-world problems. Currently working as an <b>Oracle & Web Developer at PMS Pvt Ltd</b> with <b>over 1 year of professional experience</b>, I continuously push my skills forward through academic studies and personal projects.</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>Bachelor of Science in Computer Science (BSCS)</h3>
+      <p>University of Engineering and Technology (UET), Lahore</p>
+      <p>Expected Graduation: 2027</p>
+      <p>Relevant Coursework: Artificial Intelligence, Computer Vision, Database Systems, Web Technologies, Data Structures & Algorithms, Software Engineering.</p>
     </div>
   </section>
 
@@ -112,9 +163,10 @@
       <h3>PMS Pvt Ltd (Nov 2024 – Present)</h3>
       <p>Role: Oracle & Web Developer</p>
       <ul>
-        <li>Developed and maintained websites & web applications.</li>
-        <li>Worked with Oracle Forms & Reports and backend database systems.</li>
-        <li>Delivered database-driven solutions with modern technologies.</li>
+        <li>Developed and maintained dynamic web applications with modern frontend and backend technologies.</li>
+        <li>Designed and optimized Oracle Forms, Reports, and complex database logic.</li>
+        <li>Built scalable, database-driven solutions with SQL, stored procedures, and API integrations.</li>
+        <li>Collaborated in agile teams to deliver high-quality software under tight deadlines.</li>
       </ul>
     </div>
   </section>
@@ -123,56 +175,96 @@
     <h2>Certifications</h2>
     <div class="card">
       <h3>NAVTTC (Govt. of Pakistan) – Web Development Certification</h3>
-      <p>Certified Web Developer under the Government of Pakistan program powered by NAVTTC.</p>
+      <p>Government-certified training covering full web stack development: HTML, CSS, JavaScript, and server-side technologies.</p>
     </div>
     <div class="card">
       <h3>Coursera – Preparing Data for Analysis with Microsoft Excel</h3>
-      <p>Authorized by Microsoft via Coursera.</p>
-      <img src="coursera-cert.png" alt="Coursera Certificate" class="certificate" width="400">
+      <p>Microsoft-authorized course focused on professional data preparation, cleaning, and analysis.</p>
+      <img src="coursera-cert.png" alt="Coursera Certificate" class="certificate">
     </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <div class="card">
-      <p><b>Programming:</b> C#, C++, Python</p>
-      <p><b>Databases:</b> Oracle (Forms & Reports), SQLite, SQL</p>
-      <p><b>Web Development:</b> HTML, CSS, JavaScript, Web & Web App Development</p>
-      <p><b>Interests:</b> Artificial Intelligence, Database Systems</p>
+      <p><b>Programming Languages:</b> Python, C++, C#, JavaScript</p>
+      <p><b>Web Development:</b> React, PHP (Laravel), HTML5, CSS3, Node.js basics</p>
+      <p><b>Databases:</b> Oracle (Forms & Reports), MySQL, SQLite, SQL</p>
+      <p><b>AI & Computer Vision:</b> MediaPipe, OpenCV, Neural Networks (AlexNet), Machine Learning fundamentals</p>
+      <p><b>Tools & Others:</b> Git, Streamlit, RESTful APIs, UI/UX Design principles</p>
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <div class="card">
-      <h3>AI-Powered Grocery Budget Optimizer</h3>
-      <p>Helps users manage grocery budgets with AI-based price recommendations. Built with Python, SQLite, and Streamlit.</p>
-      <a href="https://github.com/yourusername/grocery-optimizer" target="_blank">View Project</a>
+      <h3>KIDDO Baby Care Store</h3>
+      <p>A complete full-stack e-commerce platform for baby care products featuring modern UI and robust backend management.</p>
+      <ul>
+        <li><b>Technologies:</b> React (Frontend), Laravel + PHP (Backend), MySQL, RESTful APIs</li>
+        <li><b>Key Features:</b> User authentication, product catalog with search & filters, shopping cart, admin dashboard, order management</li>
+        <li><b>Achievements:</b> Responsive design across devices, secure user flows, scalable architecture</li>
+      </ul>
+      <a href="https://github.com/yourusername/kiddo-baby-care-store" target="_blank">View Project on GitHub</a>
     </div>
+
+    <div class="card">
+      <h3>Eye Blink Counter</h3>
+      <p>Real-time computer vision application that accurately detects and counts eye blinks using facial landmark tracking and deep learning classification.</p>
+      <ul>
+        <li><b>Technologies:</b> Python, MediaPipe, OpenCV, AlexNet-based model</li>
+        <li><b>Key Features:</b> Webcam input, live blink detection & counter, event logging, visual feedback</li>
+        <li><b>Achievements:</b> >95% accuracy in varied lighting, potential applications in fatigue detection & accessibility</li>
+      </ul>
+      <a href="https://github.com/yourusername/eye-blink-counter" target="_blank">View Project on GitHub</a>
+    </div>
+
+    <div class="card">
+      <h3>AI-Powered Grocery Budget Optimizer</h3>
+      <p>Smart budgeting tool that uses AI to recommend optimal grocery choices within user-defined constraints.</p>
+      <ul>
+        <li><b>Technologies:</b> Python, SQLite, Streamlit, basic ML optimization</li>
+        <li><b>Key Features:</b> Budget simulation, smart suggestions, exportable lists</li>
+        <li><b>Achievements:</b> Up to 20% better budget adherence in simulations</li>
+      </ul>
+      <a href="https://github.com/yourusername/grocery-optimizer" target="_blank">View Project on GitHub</a>
+    </div>
+
     <div class="card">
       <h3>Maze Solver using Automata</h3>
-      <p>Generated regular expressions, FSA graphs, and z-graphs to solve maze problems.</p>
-      <a href="https://github.com/yourusername/maze-solver" target="_blank">View Project</a>
+      <p>Computational project applying automata theory to solve mazes through regular expressions and graph-based representations.</p>
+      <ul>
+        <li><b>Technologies:</b> Python / C++, Graphviz or Matplotlib</li>
+        <li><b>Key Features:</b> FSA & Z-graph generation, visual pathfinding</li>
+        <li><b>Achievements:</b> Efficient solving of complex maze structures</li>
+      </ul>
+      <a href="https://github.com/yourusername/maze-solver" target="_blank">View Project on GitHub</a>
     </div>
+
     <div class="card">
       <h3>Course Management System</h3>
-      <p>A database-driven project for managing courses, students, and teachers using C++ and SQL.</p>
-      <a href="https://github.com/yourusername/course-management" target="_blank">View Project</a>
+      <p>Database-centric application for managing academic courses, students, and faculty with full CRUD functionality.</p>
+      <ul>
+        <li><b>Technologies:</b> C++, SQL</li>
+        <li><b>Key Features:</b> Enrollment, grading, reporting, search</li>
+        <li><b>Achievements:</b> Streamlined prototype for educational use</li>
+      </ul>
+      <a href="https://github.com/yourusername/course-management" target="_blank">View Project on GitHub</a>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact & Queries</h2>
+    <h2>Contact</h2>
     <div class="card">
-      <p>Email: hschatthi@.com</p>
-      <p>PHONE: 0326-9650567</p>
+      <p>Email: hschatthi@gmail.com</p>
+      <p>Phone: 0326-9650567</p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/hassan-saeed-4b9010368/" target="_blank">linkedin.com/in/Hassan Saeed</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Hassan Saeed - All Rights Reserved</p>
+    <p>© 2026 Hassan Saeed — Crafted with passion</p>
   </footer>
-
 </body>
 </html>

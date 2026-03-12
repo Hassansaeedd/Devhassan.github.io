@@ -9,10 +9,11 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #0f0f0f; /* deep black / near-black */
-      color: #e0e0e0; /* light gray for readability */
+      background: #0f0f0f;
+      color: #e0e0e0;
       transition: all 0.3s ease;
     }
+
     header {
       background: linear-gradient(135deg, #4a0e0e, #8b0000, #4a0e0e);
       color: #f5f5f5;
@@ -22,6 +23,7 @@
       position: relative;
       overflow: hidden;
     }
+
     header::before {
       content: "";
       position: absolute;
@@ -32,6 +34,27 @@
       background: radial-gradient(circle, rgba(139,0,0,0.15) 0%, transparent 70%);
       animation: pulse 12s infinite;
     }
+
+    .profile-container {
+      margin-bottom: 25px;
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #8b0000;
+      box-shadow: 0 8px 25px rgba(139,0,0,0.5);
+      transition: all 0.4s ease;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 35px rgba(139,0,0,0.7);
+      border-color: #c62828;
+    }
+
     header h1 {
       margin: 0;
       font-size: 4rem;
@@ -39,18 +62,21 @@
       letter-spacing: 2px;
       text-shadow: 0 4px 15px rgba(139,0,0,0.6);
     }
+
     header p {
       margin: 15px 0 0;
       font-size: 1.4rem;
       opacity: 0.9;
     }
+
     section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
+
     h2 {
-      color: #c62828; /* rich maroon */
+      color: #c62828;
       margin-bottom: 25px;
       font-size: 2.2rem;
       font-weight: 600;
@@ -58,6 +84,7 @@
       padding-left: 15px;
       letter-spacing: 1px;
     }
+
     .card {
       background: #1a1a1a;
       padding: 30px;
@@ -67,26 +94,31 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.6);
       transition: all 0.4s ease;
     }
+
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 15px 35px rgba(139,0,0,0.25);
       border-color: #c62828;
     }
+
     .card h3 {
       margin-top: 0;
       color: #e57373;
       font-size: 1.6rem;
     }
+
     a {
       color: #ef5350;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s;
     }
+
     a:hover {
       color: #ff8a80;
       text-decoration: underline;
     }
+
     footer {
       background: #0d0000;
       color: #b0b0b0;
@@ -95,6 +127,7 @@
       margin-top: 60px;
       border-top: 1px solid #3a0000;
     }
+
     img.certificate {
       max-width: 420px;
       width: 100%;
@@ -105,37 +138,61 @@
       box-shadow: 0 8px 20px rgba(139,0,0,0.4);
       transition: all 0.4s;
     }
+
     img.certificate:hover {
       transform: scale(1.06);
       box-shadow: 0 12px 30px rgba(139,0,0,0.6);
     }
+
     ul {
       padding-left: 20px;
       line-height: 1.7;
     }
+
     /* Animations */
     @keyframes pulse {
       0%, 100% { opacity: 0.3; transform: scale(1); }
       50% { opacity: 0.6; transform: scale(1.1); }
     }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     section, header {
       animation: fadeIn 1.2s ease-out;
     }
+
     header {
       animation: fadeInDown 1s ease-out;
+    }
+
+    @media (max-width: 768px) {
+      .profile-photo {
+        width: 140px;
+        height: 140px;
+      }
+      header h1 {
+        font-size: 3rem;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
+    <div class="profile-container">
+      <img src="profile.jpg" alt="Hassan Saeed - Profile Photo" class="profile-photo">
+    </div>
     <h1>Hassan Saeed</h1>
     <p>Oracle & Web Developer | AI & Computer Vision Enthusiast | Full-Stack Engineer</p>
   </header>
@@ -197,6 +254,7 @@
 
   <section id="projects">
     <h2>Projects</h2>
+
     <div class="card">
       <h3>KIDDO Baby Care Store</h3>
       <p>A complete full-stack e-commerce platform for baby care products featuring modern UI and robust backend management.</p>
@@ -258,13 +316,14 @@
     <div class="card">
       <p>Email: hschatthi@gmail.com</p>
       <p>Phone: 0326-9650567</p>
-      <p>LinkedIn: <a href="www.linkedin.com/in/hassan-saeed-4b9010368" target="_blank">linkedin.com/in/Hassan Saeed</a></p>
-      <p>GitHub: <a href="https://github.com/Devhassan.github.io" target="_blank">github.com/Devhassan.github.io</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/hassan-saeed-4b9010368/" target="_blank">linkedin.com/in/Hassan Saeed</a></p>
+      <p>GitHub: <a href="https://github.com/Hassansaeedd" target="_blank">github.com/Hassansaeedd</a></p>
     </div>
   </section>
 
   <footer>
     <p>© 2026 Hassan Saeed — Crafted with passion</p>
   </footer>
+
 </body>
 </html>

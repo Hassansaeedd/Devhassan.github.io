@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
   <style>
     :root {
@@ -21,6 +23,11 @@
       --text-muted: #a0a0a0;
       --border-color: #222222;
       --border-accent: #3d0a0a;
+    }
+
+    /* CSS Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
     }
 
     * {
@@ -37,7 +44,7 @@
       overflow-x: hidden;
     }
 
-    /* Particle Background Canvas Container */
+    /* Background Canvas */
     #particles-js {
       position: fixed;
       top: 0;
@@ -48,13 +55,12 @@
       pointer-events: none;
     }
 
-    /* Wrapper to keep content above particles */
     .content-wrapper {
       position: relative;
       z-index: 1;
     }
 
-    /* Header & Hero Section */
+    /* Header & Hero */
     header {
       background: linear-gradient(180deg, rgba(20, 5, 5, 0.95) 0%, rgba(10, 10, 10, 0.8) 100%);
       border-bottom: 1px solid var(--border-accent);
@@ -142,7 +148,7 @@
       transform: translateY(-2px);
     }
 
-    /* Main Container */
+    /* Layout Sections */
     section {
       max-width: 1100px;
       margin: 0 auto;
@@ -167,24 +173,26 @@
       background: linear-gradient(90deg, var(--border-accent), transparent);
     }
 
-    /* Card Styling */
+    /* Card Styling with Animation Transitions */
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 28px;
       margin-bottom: 24px;
-      transition: all 0.3s ease;
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                  box-shadow 0.4s ease, 
+                  border-color 0.4s ease;
     }
 
     .card:hover {
       background: var(--bg-card-hover);
-      border-color: var(--border-accent);
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border-color: var(--accent-red);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(229, 9, 20, 0.2);
     }
 
-    /* Tech Stack Grid */
+    /* Grid Layouts */
     .tech-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -196,11 +204,12 @@
       border: 1px solid var(--border-color);
       border-radius: 10px;
       padding: 20px;
-      transition: border-color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .tech-card:hover {
       border-color: var(--accent-red);
+      transform: translateY(-4px);
     }
 
     .tech-card h3 {
@@ -228,7 +237,6 @@
       border-radius: 4px;
     }
 
-    /* Project Grid & Badges */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -267,15 +275,14 @@
       font-weight: 600;
       font-size: 0.9rem;
       margin-top: 14px;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, transform 0.2s ease;
     }
 
     .project-link:hover {
       color: #ff4d4d;
-      text-decoration: underline;
+      transform: translateX(4px);
     }
 
-    /* Timeline List for Experience */
     .timeline-item h3 {
       font-size: 1.2rem;
       color: #ffffff;
@@ -298,7 +305,6 @@
       margin-bottom: 6px;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid var(--border-color);
       text-align: center;
@@ -308,7 +314,6 @@
       background: #050505;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .header-content {
         flex-direction: column;
@@ -332,15 +337,14 @@
 </head>
 <body>
 
-  <!-- Background Particle Container -->
   <div id="particles-js"></div>
 
   <div class="content-wrapper">
-    <!-- Header / Hero Section -->
+    <!-- Header with Zoom/Fade animations -->
     <header>
       <div class="header-content">
-        <img src="profile.jpg" alt="Hassan Saeed" class="profile-photo">
-        <div class="header-text">
+        <img src="profile.jpg" alt="Hassan Saeed" class="profile-photo" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="header-text" data-aos="fade-left" data-aos-duration="1000">
           <h1>Hassan Saeed</h1>
           <div class="tagline">Full-Stack Engineer & AI/ML Specialist</div>
           <p class="subtext">
@@ -358,19 +362,19 @@
 
     <!-- About Section -->
     <section id="about">
-      <h2>About Me</h2>
-      <div class="card">
+      <h2 data-aos="fade-right">About Me</h2>
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
         <p>
           I am a passionate Software Developer with hands-on experience in building complex SaaS ecosystems, Enterprise Resource Planning (ERP) tools, modern web interfaces, and AI/Machine Learning pipelines. Currently pursuing my BSCS at <b>UET Lahore</b>, I combine strong computer science fundamentals with practical experience as an <b>Oracle & Web Developer at PMS Pvt Ltd</b>.
         </p>
       </div>
     </section>
 
-    <!-- Tech Stack Section -->
+    <!-- Technical Stack Section with staggered cards -->
     <section id="tech-stack">
-      <h2>Technical Stack</h2>
+      <h2 data-aos="fade-right">Technical Stack</h2>
       <div class="tech-grid">
-        <div class="tech-card">
+        <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
           <h3><i class="fa-solid fa-code"></i> Core Languages</h3>
           <div class="tag-container">
             <span class="tag">Python</span>
@@ -382,7 +386,7 @@
           </div>
         </div>
 
-        <div class="tech-card">
+        <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
           <h3><i class="fa-solid fa-layer-group"></i> Frameworks & Web</h3>
           <div class="tag-container">
             <span class="tag">React.js</span>
@@ -393,7 +397,7 @@
           </div>
         </div>
 
-        <div class="tech-card">
+        <div class="tech-card" data-aos="fade-up" data-aos-delay="300">
           <h3><i class="fa-solid fa-brain"></i> AI & Computer Vision</h3>
           <div class="tag-container">
             <span class="tag">OpenCV</span>
@@ -404,7 +408,7 @@
           </div>
         </div>
 
-        <div class="tech-card">
+        <div class="tech-card" data-aos="fade-up" data-aos-delay="400">
           <h3><i class="fa-solid fa-database"></i> Databases & Tools</h3>
           <div class="tag-container">
             <span class="tag">Oracle Forms & Reports</span>
@@ -417,13 +421,12 @@
       </div>
     </section>
 
-    <!-- Featured Projects Section -->
+    <!-- Projects Grid with Scroll Reveal -->
     <section id="projects">
-      <h2>Featured Projects</h2>
+      <h2 data-aos="fade-right">Featured Projects</h2>
       <div class="projects-grid">
 
-        <!-- DhanFlow ERP -->
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="100">
           <div>
             <h3>DhanFlow ERP System</h3>
             <p>Tailored Enterprise Resource Planning system specifically engineered for rice mill operations. Manages inventory, processing workflows, supplier tracking, and batch-wise financial reporting.</p>
@@ -438,8 +441,7 @@
           </div>
         </div>
 
-        <!-- HassanTraderz POS + ERP -->
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="200">
           <div>
             <h3>HassanTraderz Mobile POS & ERP</h3>
             <p>Comprehensive Point of Sale (POS) and inventory control ERP built for mobile shops. Handles IMEI tracking, sales analytics, repair logs, and custom billing management.</p>
@@ -454,8 +456,7 @@
           </div>
         </div>
 
-        <!-- CURAX Pharmacy SaaS -->
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="300">
           <div>
             <h3>CURAX Pharmacy SaaS Suite</h3>
             <p>Multi-tenant POS and ERP suite tailored for medical stores and pharmacies. Features batch tracking, expiration warnings, automated reordering, and revenue analytics.</p>
@@ -470,8 +471,7 @@
           </div>
         </div>
 
-        <!-- Supermart ERP -->
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="100">
           <div>
             <h3>Supermart ERP System</h3>
             <p>High-volume supermarket management platform with barcode scanning capabilities, real-time stock deductions, multi-checkout counter synchronization, and audit logging.</p>
@@ -486,8 +486,7 @@
           </div>
         </div>
 
-        <!-- Floral Scentora -->
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="200">
           <div>
             <h3>Floral Scentora Perfumes</h3>
             <p>An animated, modern e-commerce storefront for luxury fragrances featuring smooth transitions, dynamic product showcases, and integrated cart workflows.</p>
@@ -502,8 +501,7 @@
           </div>
         </div>
 
-        <!-- Mactis.co -->
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="300">
           <div>
             <h3>Mactis.co Official Website</h3>
             <p>Corporate portfolio and service platform designed with modern responsive layout standards, clean typography, and optimized asset delivery.</p>
@@ -518,8 +516,7 @@
           </div>
         </div>
 
-        <!-- KIDDO E-Commerce -->
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="100">
           <div>
             <h3>KIDDO Baby Care Store</h3>
             <p>E-commerce web platform for baby care accessories featuring user authentication, filtered product search, shopping carts, and admin dashboards.</p>
@@ -534,8 +531,7 @@
           </div>
         </div>
 
-        <!-- Eye Blink Counter -->
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up" data-aos-delay="200">
           <div>
             <h3>AI Eye Blink Counter</h3>
             <p>Real-time Computer Vision system utilizing deep learning to monitor driver fatigue or eye fatigue by calculating ocular landmarks and blink rates via webcam.</p>
@@ -554,10 +550,10 @@
       </div>
     </section>
 
-    <!-- Experience & Education Grid -->
+    <!-- Experience & Education -->
     <section id="experience-education">
-      <h2>Experience & Education</h2>
-      <div class="card timeline-item">
+      <h2 data-aos="fade-right">Experience & Education</h2>
+      <div class="card timeline-item" data-aos="fade-up" data-aos-delay="100">
         <h3>PMS Pvt Ltd</h3>
         <div class="company">Oracle & Web Developer (Nov 2024 – Present)</div>
         <ul>
@@ -567,7 +563,7 @@
         </ul>
       </div>
 
-      <div class="card timeline-item">
+      <div class="card timeline-item" data-aos="fade-up" data-aos-delay="200">
         <h3>Bachelor of Science in Computer Science (BSCS)</h3>
         <div class="company">University of Engineering and Technology (UET), Lahore (Expected 2027)</div>
         <ul>
@@ -576,79 +572,58 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <p>© 2026 Hassan Saeed — Designed & Engineered for High Performance</p>
     </footer>
   </div>
 
-  <!-- Particles.js Engine Script -->
+  <!-- Script Imports -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
   <script>
-    // Particle background configuration
+    // Initialize AOS Library
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 120
+    });
+
+    // Option 1 Particles Configuration
     particlesJS('particles-js', {
       "particles": {
-        "number": {
-          "value": 65,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#e50914"
-        },
-        "shape": {
-          "type": "circle"
-        },
-        "opacity": {
-          "value": 0.3,
-          "random": true
-        },
-        "size": {
-          "value": 3,
-          "random": true
-        },
+        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": ["#e50914", "#ffffff"] },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.6, "random": false },
+        "size": { "value": 4, "random": true },
         "line_linked": {
           "enable": true,
           "distance": 150,
           "color": "#e50914",
-          "opacity": 0.15,
-          "width": 1
+          "opacity": 0.35,
+          "width": 1.4
         },
         "move": {
           "enable": true,
-          "speed": 1.8,
+          "speed": 2.8,
           "direction": "none",
           "random": false,
           "straight": false,
-          "out_mode": "out",
-          "bounce": false
+          "out_mode": "out"
         }
       },
       "interactivity": {
         "detect_on": "canvas",
         "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "grab"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          },
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" },
           "resize": true
         },
         "modes": {
-          "grab": {
-            "distance": 140,
-            "line_linked": {
-              "opacity": 0.4
-            }
-          },
-          "push": {
-            "particles_nb": 3
-          }
+          "repulse": { "distance": 150, "duration": 0.4 },
+          "push": { "particles_nb": 4 }
         }
       },
       "retina_detect": true
